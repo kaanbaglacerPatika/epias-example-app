@@ -1,0 +1,27 @@
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-vertical {
+  background-image: url('../assets/grips/vertical-grip.png');
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('../assets/grips/horizontal-grip.png');
+}
+
+.gutter.gutter-horizontal:hover {
+  cursor: col-resize;
+}
+
+.split {
+  display: flex;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
