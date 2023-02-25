@@ -1,3 +1,7 @@
+import Card from "../UI/Card.jsx";
+import React from "react";
+import {useSelector} from "react-redux";
+
 const HomeTopRightPanel = (props) => {
 
    const splitPercentages = useSelector((state) => state.ui.splitPercentages);
