@@ -1,88 +1,55 @@
-import React, {useState} from "react";
+import React from "react";
 import Split from "react-split";
-import Table from "../components/Table";
 import "./Home.scss";
-import FilterButton from "../components/FilterButton.jsx";
+import {useDispatch} from "react-redux";
+import {uiActions} from "../store/ui-slice.js";
+import HomeTopLeftPanel from "../components/Home/HomeTopLeftPanel.jsx";
+import HomeTopRightPanel from "../components/Home/HomeTopRightPanel.jsx";
+import HomeBottomLeftPanel from "../components/Home/HomeBottomLeftPanel.jsx";
+import HomeBottomRightPanel from "../components/Home/HomeBottomRightPanel.jsx";
 
-const TopLeft = () => {
-   const headerList = [{id: 'id', label: 'id'}, {id: 'label', label: 'label'}]
-   const dataList = [[{id: 'id1', label: 'id'}, {id: 'label1', label: 'label'}]];
-   const optionList = [
-      {
-         value: false,
-         label: 'id',
-         field: 'id'
-      },
-      {
-         value: false,
-         label: 'kontrat',
-         field: 'contractYear'
-      },
-      {
-         value: false,
-         label: 'teklif',
-         field: 'bid'
-      },
-      {
-         value: false,
-         label: 'data',
-         field: 'data'
-      }
-   ];
-   return (<div>
-      <FilterButton id={'test'}/>
-      <Table headerList={headerList} dataList={dataList}/>
-   </div>);
-};
-const TopRight = () => {
-   return (
-      <div>
-         <h1>Top Right</h1>
-      </div>
-   );
-};
-
-const BottomLeft = () => {
-   return (
-      <div>
-         <h1>Bottom Left</h1>
-      </div>
-   );
-};
-
-const BottomRight = () => {
-   return (
-      <div>
-         <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Excepturi ea, sapiente dolore similique voluptates
-            ut magnam cupiditate quod hic eligendi beatae nesciunt deserunt dolorem minima autem blanditiis quam
-            quisquam doloribus.
-         </p>
-      </div>
-   );
-};
 
 function Top() {
+   const dispatch = useDispatch();
+
+   const onDragEnd = (sizes) => {
+      dispatch(uiActions.setHomeTopHorizontalSplit(sizes))
+   };
+
    return <Split
       sizes={[70, 30]}
       className="split"
-      direction="horizontal">
-      <TopLeft></TopLeft>
-      <TopRight></TopRight>
+      direction="horizontal"
+      onDragEnd={onDragEnd}>
+      <HomeTopLeftPanel/>
+      <HomeTopRightPanel/>
    </Split>;
 }
 
 function Bottom() {
+   const dispatch = useDispatch();
+
+   const onDragEnd = (sizes) => {
+      dispatch(uiActions.setHomeBottomHorizontalSplit(sizes))
+   };
+
    return <Split
       sizes={[70, 30]}
       className="split"
-      direction="horizontal">
-      <BottomLeft></BottomLeft>
-      <BottomRight></BottomRight>
+      direction="horizontal"
+      onDragEnd={onDragEnd}>
+      <HomeBottomLeftPanel/>
+      <HomeBottomRightPanel/>
    </Split>;
 }
 
 export default function HomePage() {
+   const dispatch = useDispatch();
+
+   const onDragEnd = (sizes) => {
+      dispatch(uiActions.setHomeVerticalSplit(sizes))
+   };
+
    return (
       <Split
          className="wrap"
@@ -95,11 +62,10 @@ export default function HomePage() {
          dragInterval={1}
          direction="vertical"
          cursor="col-resize"
-      >
+         onDragEnd={onDragEnd}>
          <Top/>
          <Bottom/>
       </Split>
-
    )
 }
 
