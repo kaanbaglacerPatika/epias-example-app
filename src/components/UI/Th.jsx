@@ -9,7 +9,7 @@ const StyledTh = styled.th`
 const Th = (props) => {
 
    Th.propTypes = {
-      key: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired
    }
 

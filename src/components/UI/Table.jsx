@@ -22,7 +22,7 @@ const Table = (props) => {
    const TableHeaderRow = () => {
       return <>
          {headerList?.length > 0 && (<tr>
-            {headerList.map((header) => <Th label={header.label} key={header.id}/>)}
+            {headerList.map((header) => <Th label={header.label} key={header.id} id={header.id}/>)}
          </tr>)}
       </>;
    }
@@ -35,7 +35,7 @@ const Table = (props) => {
 
       return <>
          {props.rowDataList?.length > 0 && (<tr>
-            {props.rowDataList.map((data) => <Td label={data.label} key={data.id}/>)}
+            {props.rowDataList.map((data) => <Td label={data.label} key={data.id} id={data.id}/>)}
          </tr>)}
       </>;
    };
