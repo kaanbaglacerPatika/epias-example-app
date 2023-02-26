@@ -1,11 +1,18 @@
 import React from "react";
+import Table from "../UI/Table.jsx";
+import Panel from "../UI/Panel.jsx";
 
 const HomeBottomLeftPanel = () => {
-   return (
-      <div>
-         <h1>Bottom Left</h1>
-      </div>
-   );
+   const dataList = [
+      {id: 'id', label: 'label'},
+      {id: 'id', label: 'label'},
+      {id: 'id', label: 'label'},
+   ];
+   const fieldList = ['id', 'label'];
+   return (<Panel>
+      <Table dataList={dataList} fieldList={fieldList}/>
+      <button>Yeni ekle</button>
+   </Panel>);
 };
 
 export default HomeBottomLeftPanel;

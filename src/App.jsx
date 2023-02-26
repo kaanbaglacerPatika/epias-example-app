@@ -4,7 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import RootLayout from "./pages/Root.jsx";
 import HomePage from "./pages/Home.jsx";
 import {useDispatch} from "react-redux";
-import {assignFactoryData} from "./store/factory-actions.js";
+import {factoryActions} from "./store/factory-slice.js";
 
 const router = createBrowserRouter([
    {
@@ -54,10 +54,14 @@ function App() {
       }
    );
    useEffect(() => {
-      dispatch(assignFactoryData(dataJSON));
+      const factoryItemsData = JSON.parse(dataJSON)
+      dispatch(factoryActions.replaceFactoryItems({factoryItems: factoryItemsData.response}));
    }, [dispatch]);
 
-   return (<RouterProvider router={router}/>);
+   return (<>
+      <RouterProvider router={router}/>
+      <div id="modal-root"></div>
+   </>);
 }
 
 export default App;

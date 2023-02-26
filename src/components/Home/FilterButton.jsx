@@ -25,9 +25,10 @@ const FilterButton = (props) => {
    FilterButton.propTypes = {
       id: PropTypes.string,
       onClick: PropTypes.func,
+      style: PropTypes.any
    };
 
-   return <Button primary id={props.id} onClick={props.onClick}>
+   return <Button primary id={props.id} onClick={props.onClick} style={props.style}>
       <FaFilter/>
    </Button>;
 }

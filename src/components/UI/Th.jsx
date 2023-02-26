@@ -5,12 +5,13 @@ import styled from "styled-components";
 const StyledTh = styled.th`
   background: #949494;
   height: 25px;
+  text-align: start;
 `;
 const Th = (props) => {
 
    Th.propTypes = {
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      id: PropTypes.any.isRequired,
+      label: PropTypes.any.isRequired
    }
 
    return <StyledTh key={props.id}>
