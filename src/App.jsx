@@ -53,9 +53,34 @@ function App() {
          ]
       }
    );
+   const bottomTableDataJSON = JSON.stringify({
+         "response": [
+            {
+               "id": 1,
+               "contract": "ABC12345",
+               "bid": 254,
+               "data": "Alış"
+            },
+            {
+               "id": 2,
+               "contract": "DEF56789",
+               "bid": 6448,
+               "data": "Satış"
+            },
+            {
+               "id": 3,
+               "contract": "GHI45678",
+               "bid": 5020,
+               "data": "Satış"
+            },
+         ]
+      }
+   );
    useEffect(() => {
-      const factoryItemsData = JSON.parse(dataJSON)
-      dispatch(factoryActions.replaceFactoryItems({factoryItems: factoryItemsData.response}));
+      const topFactoryItemsData = JSON.parse(dataJSON);
+      const bottomFactoryItemsData = JSON.parse(bottomTableDataJSON);
+      dispatch(factoryActions.assignTopFactoryItems({topFactoryItems: topFactoryItemsData.response}));
+      dispatch(factoryActions.assignBottomFactoryItems({bottomFactoryItems: bottomFactoryItemsData.response}));
    }, [dispatch]);
 
    return (<>

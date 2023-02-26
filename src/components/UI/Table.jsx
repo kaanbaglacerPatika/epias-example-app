@@ -38,7 +38,7 @@ const Table = (props) => {
 
       return <>
          {fieldList?.length > 0 && (<tr>
-            {fieldList.map((field) => <Td label={props.rowData[field]} key={field} id={field}/>)}
+            {fieldList.map((field) => <Td label={props.rowData[field] ?? ''} key={field} id={field}/>)}
          </tr>)}
       </>;
    };

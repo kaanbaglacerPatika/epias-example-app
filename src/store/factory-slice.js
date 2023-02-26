@@ -3,11 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const factorySlice = createSlice({
    name: 'factory',
    initialState: {
-      factoryItems: [],
+      topFactoryItems: [],
+      bottomFactoryItems: []
    },
    reducers: {
-      replaceFactoryItems(state, action) {
-         state.factoryItems = action.payload.factoryItems;
+      assignTopFactoryItems(state, action) {
+         state.topFactoryItems = action.payload.topFactoryItems;
+      },
+      assignBottomFactoryItems(state, action) {
+         state.bottomFactoryItems = action.payload.bottomFactoryItems;
       },
    },
 });

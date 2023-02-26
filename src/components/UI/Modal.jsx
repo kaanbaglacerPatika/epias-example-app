@@ -2,31 +2,23 @@ import React, {useState} from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import styles from "./Modal.module.scss";
 
-const StyledModal = styled.div`
-  position: absolute;
-  z-index: 100;
-  right: ${props => `calc(${props?.right} + 50px)` ?? '35px'};
-  top: 40px;
-  background-color: white;
-  padding: 40px 20px 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  max-width: 90%;
-  max-height: 90%;
-  overflow: auto;
-`;
+const StyledModal = (props) => {
+   return <div
+      className={styles.modal}
+      style={{right: props?.right ? `calc(${props?.right} + 50px)` : '35px'}}>
+      {props.children}
+   </div>
+}
 
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5em;
-  background: none;
-  border: none;
-  cursor: pointer;
-  outline: none;
-`;
+const CloseButton = (props) => {
+   return <button
+      className={styles.closeButton}
+      onClick={props.onClick}>
+      {props.children}
+   </button>
+}
 
 const Modal = (props) => {
 
@@ -37,7 +29,7 @@ const Modal = (props) => {
    return ReactDOM.createPortal(
       <StyledModal right={props.right}>
          <CloseButton onClick={props.changeModal}>
-            x
+            <span>x</span>
          </CloseButton>
          {props.children}
       </StyledModal>,

@@ -12,7 +12,7 @@ import {useImmer} from "use-immer";
 const HomeTopLeftPanel = () => {
    const [contractYearFilterValue, setContractYearFilterValue] = useState("");
    const [modalIsOpen, setModalIsOpen] = useState(false);
-   const factoryItems = useSelector(state => state.factory.factoryItems ?? []);
+   const factoryItems = useSelector(state => state.factory.topFactoryItems ?? []);
    const splitPercentages = useSelector((state) => state.ui.splitPercentages);
    const uniqueContractYears = [...new Set(factoryItems.map(factoryItem => factoryItem?.contractYear))];
    let [topLeftPerc, topRightPerc] = splitPercentages.homeTopHorizontal;
