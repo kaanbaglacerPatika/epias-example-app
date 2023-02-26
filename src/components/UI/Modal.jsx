@@ -34,10 +34,9 @@ const Modal = (props) => {
       changeModal: PropTypes.func.isRequired,
       right: PropTypes.any
    }
-   console.log(props.right)
    return ReactDOM.createPortal(
       <StyledModal right={props.right}>
-         <CloseButton onClick={() => props.changeModal}>
+         <CloseButton onClick={props.changeModal}>
             x
          </CloseButton>
          {props.children}
