@@ -5,15 +5,18 @@ import Td from "./Td.jsx";
 import styled from "styled-components";
 
 const StyledTable = styled.table`
-  width: 100%
+  width: 100%;
+  border-spacing: 0;
 `;
 
 const Table = (props) => {
-   const {headerList, dataList, tableStyle} = props;
+   const {headerList, dataList, tableStyle, fieldList} = props;
 
    Table.propTypes = {
       headerList: PropTypes
-         .arrayOf(PropTypes.any).isRequired,
+         .arrayOf(PropTypes.any),
+      fieldList: PropTypes
+         .arrayOf(PropTypes.string),
       dataList: PropTypes
          .arrayOf(PropTypes.any).isRequired,
       tableStyle: PropTypes.any
@@ -29,13 +32,13 @@ const Table = (props) => {
 
    const TableDataRow = (props) => {
       TableDataRow.propTypes = {
-         rowDataList: PropTypes
+         rowData: PropTypes
             .arrayOf(PropTypes.any).isRequired
       };
 
       return <>
-         {props.rowDataList?.length > 0 && (<tr>
-            {props.rowDataList.map((data) => <Td label={data.label} key={data.id} id={data.id}/>)}
+         {fieldList?.length > 0 && (<tr>
+            {fieldList.map((field) => <Td label={props.rowData[field]} key={field} id={field}/>)}
          </tr>)}
       </>;
    };
@@ -47,7 +50,7 @@ const Table = (props) => {
       <tbody>
       {
          dataList?.length > 0 && (dataList.map((data, index) => {
-            return <TableDataRow key={index} rowDataList={data}/>;
+            return <TableDataRow key={index} rowData={data}/>;
          }))
       }
       </tbody>

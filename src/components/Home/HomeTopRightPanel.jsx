@@ -1,6 +1,7 @@
 import Card from "../UI/Card.jsx";
 import React from "react";
 import {useSelector} from "react-redux";
+import Panel from "../UI/Panel.jsx";
 
 const HomeTopRightPanel = (props) => {
 
@@ -11,7 +12,7 @@ const HomeTopRightPanel = (props) => {
    const [topPerc, bottomPerc] = splitPercentages.homeVertical;
 
    return (
-      <div>
+      <Panel>
          <Card>
             <div>
                <h4>Ayarlar</h4>
@@ -29,7 +30,7 @@ const HomeTopRightPanel = (props) => {
                <p>%{bottomLeftPerc}, %{bottomRightPerc}</p>
             </div>
          </Card>
-      </div>
+      </Panel>
    );
 };
 

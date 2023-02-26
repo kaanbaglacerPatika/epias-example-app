@@ -4,13 +4,14 @@ import styled from "styled-components";
 
 const StyledTd = styled.td`
   height: 25px;
+  border-bottom: 1px gray solid;
 `;
 
 const Td = (props) => {
 
    Td.propTypes = {
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired
+      id: PropTypes.any.isRequired,
+      label: PropTypes.any.isRequired
    }
 
    return <StyledTd key={props.id}>
