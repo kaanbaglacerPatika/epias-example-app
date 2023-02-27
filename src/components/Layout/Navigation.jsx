@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import styles from "./Navigation.module.scss"
 import {AiOutlineLayout, AiOutlineSave, CgProfile} from "react-icons/all.js";
 import OutlinedIconButton from "../UI/OutlinedIconButton.jsx";
