@@ -1,16 +1,6 @@
-import styled from "styled-components";
+import styles from "./InsertTableForm.module.scss";
 import React, {useRef} from "react";
 import PropTypes from "prop-types";
-
-const InsertForm = styled.input`
-  width: 125px;
-  margin: 5px;
-`;
-
-export const InsertTableButton = styled.button`
-  margin: 5px;
-  padding: 2px;
-`;
 
 const InsertTableForm = (props) => {
 
@@ -34,12 +24,12 @@ const InsertTableForm = (props) => {
    };
 
    return <div>
-      <InsertForm ref={idInputRef} type="text" placeholder="no giriniz."/>
-      <InsertForm ref={contractInputRef} type="text" placeholder="kontrat giriniz."/>
-      <InsertForm ref={bidInputRef} type="text" placeholder="teklif giriniz."/>
-      <InsertForm ref={dataInputRef} type="text" placeholder="data giriniz."/>
-      <InsertTableButton onClick={handleOnSaveClick}>Kaydet</InsertTableButton>
-      <InsertTableButton onClick={props.handleOnCloseClick}>Kapat</InsertTableButton>
+      <input ref={idInputRef} className={styles.insertInput} type="text" placeholder="no giriniz."/>
+      <input ref={contractInputRef} className={styles.insertInput} type="text" placeholder="kontrat giriniz."/>
+      <input ref={bidInputRef} className={styles.insertInput} type="text" placeholder="teklif giriniz."/>
+      <input ref={dataInputRef} className={styles.insertInput} type="text" placeholder="data giriniz."/>
+      <button className={styles.formButton} onClick={handleOnSaveClick}>Kaydet</button>
+      <button className={styles.formButton} onClick={props.handleOnCloseClick}>Kapat</button>
    </div>
 }
 
