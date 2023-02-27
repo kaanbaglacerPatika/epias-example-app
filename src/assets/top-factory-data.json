@@ -1,0 +1,34 @@
+{
+  "response": [
+    {
+      "id": 1,
+      "contractYear": 2019,
+      "bid": 123154,
+      "data": "Alış"
+    },
+    {
+      "id": 2,
+      "contractYear": 2019,
+      "bid": 7233154,
+      "data": "Satış"
+    },
+    {
+      "id": 3,
+      "contractYear": 2019,
+      "bid": 923154,
+      "data": "Satış"
+    },
+    {
+      "id": 4,
+      "contractYear": 2018,
+      "bid": 3154,
+      "data": "Satış"
+    },
+    {
+      "id": 5,
+      "contractYear": 2018,
+      "bid": 54,
+      "data": "Alış"
+    }
+  ]
+}
