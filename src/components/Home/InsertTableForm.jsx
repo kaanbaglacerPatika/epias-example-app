@@ -38,8 +38,8 @@ const InsertTableForm = (props) => {
       <InsertForm ref={contractInputRef} type="text" placeholder="kontrat giriniz."/>
       <InsertForm ref={bidInputRef} type="text" placeholder="teklif giriniz."/>
       <InsertForm ref={dataInputRef} type="text" placeholder="data giriniz."/>
-      <Button onClick={handleOnSaveClick}>Kaydet</Button>
-      <Button onClick={props.handleOnCloseClick}>Kapat</Button>
+      <InsertTableButton onClick={handleOnSaveClick}>Kaydet</InsertTableButton>
+      <InsertTableButton onClick={props.handleOnCloseClick}>Kapat</InsertTableButton>
    </div>
 }
 

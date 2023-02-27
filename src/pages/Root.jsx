@@ -1,15 +1,16 @@
 import React from "react";
 import { Outlet } from 'react-router-dom';
+import Layout from "../components/Layout/Layout.jsx";
 
 function RootLayout() {
    // const navigation = useNavigation();
 
    return (
       <>
-         <main>
+         <Layout>
             {/* {navigation.state === 'loading' && <p>Loading...</p>} */}
             <Outlet />
-         </main>
+         </Layout>
       </>
    );
 }

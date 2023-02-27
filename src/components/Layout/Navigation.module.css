@@ -1,0 +1,36 @@
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(135deg, rgb(15, 35, 132) 0%, rgb(66, 69, 87) 100%);
+}
+
+.logo {
+  padding: 1rem;
+}
+.logo img {
+  height: 40px;
+}
+
+.profile img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profileAndSaveLayout {
+  display: flex;
+  align-items: center;
+}
+.profileAndSaveLayout span {
+  color: white;
+  textAlign: center;
+  margin: 0 10px 0 5px;
+}
+
+/*# sourceMappingURL=Navigation.module.css.map */

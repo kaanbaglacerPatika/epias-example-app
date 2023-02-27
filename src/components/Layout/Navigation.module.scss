@@ -1,0 +1,35 @@
+header {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(15, 35, 132) 0%,rgba(66, 69, 87,1) 100%);
+}
+
+.logo{
+  padding: 1rem;
+  & img{
+    height: 40px;
+  }
+}
+
+.profile img {
+  height: 40px;
+  border-radius: 50%;
+}
+
+.profileAndSaveLayout{
+  display: flex;
+  align-items: center;
+
+  span{
+    color: white;
+    textAlign: center;
+    margin: 0 10px 0 5px;
+  }
+}
