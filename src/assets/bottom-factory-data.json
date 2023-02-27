@@ -1,0 +1,22 @@
+{
+  "response": [
+    {
+      "id": 1,
+      "contract": "ABC12345",
+      "bid": 254,
+      "data": "Alış"
+    },
+    {
+      "id": 2,
+      "contract": "DEF56789",
+      "bid": 6448,
+      "data": "Satış"
+    },
+    {
+      "id": 3,
+      "contract": "GHI45678",
+      "bid": 5020,
+      "data": "Satış"
+    }
+  ]
+}

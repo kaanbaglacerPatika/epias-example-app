@@ -8,15 +8,10 @@ import HomeTopRightPanel from "../components/Home/HomeTopRightPanel.jsx";
 import HomeBottomLeftPanel from "../components/Home/HomeBottomLeftPanel.jsx";
 import HomeBottomRightPanel from "../components/Home/HomeBottomRightPanel.jsx";
 
-
 function Top() {
    const dispatch = useDispatch();
-
    const splitPercentages = useSelector((state) => state.ui.splitPercentages);
-
    const [topLeftPerc, topRightPerc] = splitPercentages.homeTopHorizontal;
-
-
 
    const onDragEnd = (sizes) => {
       dispatch(uiActions.setHomeTopHorizontalSplit(sizes))

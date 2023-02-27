@@ -3,7 +3,7 @@ import React from "react";
 import {useSelector} from "react-redux";
 import Panel from "../UI/Panel.jsx";
 
-const HomeTopRightPanel = (props) => {
+const HomeTopRightPanel = () => {
 
    const splitPercentages = useSelector((state) => state.ui.splitPercentages);
 
