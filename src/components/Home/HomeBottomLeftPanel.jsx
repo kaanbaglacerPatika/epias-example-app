@@ -3,7 +3,8 @@ import Table from "../UI/Table.jsx";
 import Panel from "../UI/Panel.jsx";
 import {useDispatch, useSelector} from "react-redux";
 import {factoryActions} from "../../store/factory-slice.js";
-import InsertTableForm, {InsertTableButton} from "./InsertTableForm.jsx";
+import InsertTableForm from "./InsertTableForm.jsx";
+import insertTableFormStyles from "./InsertTableForm.module.scss";
 
 const HomeBottomLeftPanel = () => {
    const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const HomeBottomLeftPanel = () => {
       {insertFormVisible &&
          <InsertTableForm handleOnSaveClick={handleOnSaveClick} handleOnCloseClick={hideInsertForm}/>
       }
-      <InsertTableButton onClick={showInsertForm}>Yeni ekle</InsertTableButton>
+      <button className={insertTableFormStyles.formButton} onClick={showInsertForm}>Yeni ekle</button>
    </Panel>);
 };
 

@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styles from "./Th.module.scss";
 
-const StyledTh = styled.th`
-  background: #949494;
-  height: 25px;
-  text-align: start;
-`;
 const Th = (props) => {
 
    Th.propTypes = {
@@ -14,9 +9,9 @@ const Th = (props) => {
       label: PropTypes.any.isRequired
    }
 
-   return <StyledTh key={props.id}>
+   return <th className={styles.th} key={props.id}>
       {props.label}
-   </StyledTh>
+   </th>
 }
 
 export default Th;

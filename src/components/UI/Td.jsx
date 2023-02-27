@@ -1,11 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styles from "./Td.module.scss";
 
-const StyledTd = styled.td`
-  height: 25px;
-  border-bottom: 1px gray solid;
-`;
 
 const Td = (props) => {
 
@@ -14,9 +10,9 @@ const Td = (props) => {
       label: PropTypes.any.isRequired
    }
 
-   return <StyledTd key={props.id}>
+   return <td className={styles.td} key={props.id}>
       {props.label}
-   </StyledTd>
+   </td>
 }
 
 export default Td;

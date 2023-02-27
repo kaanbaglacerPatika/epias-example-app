@@ -1,9 +1,10 @@
-import styled from "styled-components";
 import React from "react";
+import styles from "./Panel.module.scss"
 
-const Panel = styled.div`
-  padding: 5px;
-  overflow: auto;
-`;
+const Panel = (props) => {
+   return <div className={styles.panel}>
+      {props.children}
+   </div>
+};
 
 export default Panel;

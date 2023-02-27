@@ -2,12 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 import Th from "./Th.jsx";
 import Td from "./Td.jsx";
-import styled from "styled-components";
-
-const StyledTable = styled.table`
-  width: 100%;
-  border-spacing: 0;
-`;
+import styles from "./Table.module.scss";
 
 const Table = (props) => {
    const {headerList, dataList, tableStyle, fieldList} = props;
@@ -43,7 +38,7 @@ const Table = (props) => {
       </>;
    };
 
-   return <StyledTable style={tableStyle}>
+   return <table className={styles.table} style={tableStyle}>
       <thead>
       <TableHeaderRow/>
       </thead>
@@ -54,7 +49,7 @@ const Table = (props) => {
          }))
       }
       </tbody>
-   </StyledTable>
+   </table>
 };
 
 export default Table;
