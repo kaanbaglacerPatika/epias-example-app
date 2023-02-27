@@ -5,6 +5,8 @@ import RootLayout from "./pages/Root.jsx";
 import HomePage from "./pages/Home.jsx";
 import {useDispatch} from "react-redux";
 import {factoryActions} from "./store/factory-slice.js";
+import {localStorageKeys} from "./utils/constants.js";
+import {uiActions} from "./store/ui-slice.js";
 
 const router = createBrowserRouter([
    {
@@ -81,6 +83,12 @@ function App() {
       const bottomFactoryItemsData = JSON.parse(bottomTableDataJSON);
       dispatch(factoryActions.assignTopFactoryItems({topFactoryItems: topFactoryItemsData.response}));
       dispatch(factoryActions.assignBottomFactoryItems({bottomFactoryItems: bottomFactoryItemsData.response}));
+      if (!!localStorage.getItem(localStorageKeys.LayoutSplitPercentages)) {
+         const uiLayoutPercentages = JSON.parse(localStorage.getItem(localStorageKeys.LayoutSplitPercentages));
+         dispatch(uiActions.setLayoutSplit(uiLayoutPercentages));
+         dispatch(uiActions.setInitialLayoutSplit(uiLayoutPercentages));
+      }
+
    }, [dispatch]);
 
    return (<>

@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import ReactDOM from "react-dom";
-import styled from "styled-components";
 import PropTypes from "prop-types";
 import styles from "./Modal.module.scss";
 
